@@ -39,6 +39,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Add twitter bootstrap
 gem 'bootstrap-sass'
 
+# gem faker
+gem 'faker'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
