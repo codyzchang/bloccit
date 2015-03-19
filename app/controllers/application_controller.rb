@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-<<<<<<< HEAD
-=======
+
   before_action :flash_attack, only: [:index, :show, :edit, :new]
->>>>>>> 69d7ad68ce1517be132e4e6e7a79027ddf672f0b
+  
+
  
    rescue_from Pundit::NotAuthorizedError do |exception|
      redirect_to root_url, alert: exception.message
@@ -22,6 +22,16 @@ class ApplicationController < ActionController::Base
    devise_parameter_sanitizer.for(:sign_up) << :name
   end
   
+
+  before_action :flash_attack, only: [:index, :show, :edit, :new]
+ 
+   protected
+ 
+  def configure_permitted_parameters
+   devise_parameter_sanitizer.for(:sign_up) << :name
+  end
+  
+
   def flash_attack
     flash.now[:notice] = "Authentication Assignment"
   end
