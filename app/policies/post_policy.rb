@@ -1,0 +1,4 @@
+ class PostPolicy < ApplicationPolicy
+   
+   
+ end
