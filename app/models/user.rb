@@ -12,6 +12,15 @@ class User < ActiveRecord::Base
    role == 'moderator'
  end
   
+ def member?
+    role = 'member'
+ end
+  
+ def user?
+    role = 'user'
+ end
+  
+  has_many :posts
   
   
   
