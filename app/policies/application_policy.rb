@@ -39,6 +39,5 @@ class ApplicationPolicy
     record.class
   end
 
-  
 end
 

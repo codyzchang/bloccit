@@ -7,8 +7,4 @@ class Post < ActiveRecord::Base
   
   scope :ordered_by_title, -> { order('title') }
   scope :ordered_by_reverse_created_at , -> { order('title').reverse }
-  
-  
-  
-  
 end

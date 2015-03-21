@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
@@ -43,5 +44,5 @@ class PostsController < ApplicationController
       flash.now[:error] = "There was an error saving the post. Please try again."
       render :new
     end
-  end  
+  end
 end

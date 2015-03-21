@@ -49,7 +49,6 @@ posts = Post.all
     )
 end
 
-
 admin = User.new(
    name:     'Admin User',
    email:    'admin@example.com',
@@ -77,8 +76,6 @@ admin = User.new(
  )
  member.skip_confirmation!
  member.save!
-
-
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
