@@ -11,9 +11,8 @@
 <ul class="nav nav-tabs">
   <li> <%= link_to "Bloccit", root_path %></li>
   <li> <%= link_to "About", about_path %></li>
-  <li> <%= link_to "Posts", posts_path %></li>
-         
-        <div class="pull-right user-info">
+  
+          <div class="pull-right user-info">
            <% if current_user %>
            Hello <%= current_user.name %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
            <% else %>
@@ -25,20 +24,20 @@
   
   </ul>
     
-         <% if flash[:notice] %>
+         <% if flash.now[:notice] %>
          <div class="alert alert-success">
            <button type="button" class="close" data-dismiss="alert">&times;</button>
-           <%= flash[:notice] %>
+           <%= flash.now[:notice] %>
          </div>
-       <% elsif flash[:error] %>
+       <% elsif flash.now[:error] %>
          <div class="alert alert-danger">
            <button type="button" class="close" data-dismiss="alert">&times;</button>
-           <%= flash[:error] %>
+           <%= flash.now[:error] %>
          </div>
-       <% elsif flash[:alert] %>
+       <% elsif flash.now[:alert] %>
          <div class="alert alert-warning">
            <button type="button" class="close" data-dismiss="alert">&times;</button>
-           <%= flash[:alert] %>
+           <%= flash.now[:alert] %>
          </div>
        <% end %>
   
