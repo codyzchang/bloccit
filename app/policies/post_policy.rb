@@ -8,22 +8,15 @@ class PostPolicy < ApplicationPolicy
     end
 
     def resolve
-      if user.admin? || user.moderator?
+      if user && (user.moderator? || user.admin?)
         scope.all
       else
-        scope.where(:published => true)
+        scope.where(:user => user)
       end
     end
   end
 
-  if user.admin? || user.moderator?
-    def index?
-      true
-    end
+  def index?
+    user
   end
-   
-  def update?
-    user.admin? or not post.published?
-  end
-   
 end
