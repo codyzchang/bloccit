@@ -27,3 +27,6 @@ end
 gem 'faker'
 gem 'devise'
 gem 'pundit'
+
+gem 'carrierwave'
+gem 'mini_magick'
