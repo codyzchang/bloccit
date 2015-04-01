@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'figaro', '1.0'
+gem 'redcarpet'
 
 group :doc do
   gem 'sdoc', require: false

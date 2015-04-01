@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
      if @topic.save
        redirect_to @topic, notice: "Topic was saved successfully."
      else
-       flash[:error] = "Error creating topic. Please try again."
+       flash.now[:error] = "Error creating topic. Please try again."
        render :new
      end
    end
@@ -38,7 +38,7 @@ class TopicsController < ApplicationController
      if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
        redirect_to @topic
      else
-       flash[:error] = "Error saving topic. Please try again."
+       flash.now[:error] = "Error saving topic. Please try again."
        render :edit
      end
    end
