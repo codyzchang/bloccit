@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def create
     @topic = Topic.find(params[:topic_id])
-    @post = current_user.posts.build(params.require(:post).permit(:title, :body))
+    @post = current_user.posts.build(post_params)
     @post.topic = @topic
     authorize @post
 
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:topic_id])
-    @post = Post.find(params[:id])
+    @post = current_user.posts.build(post_params)
     authorize @post
 
     if @post.update_attributes(params.require(:post).permit(:title, :body))
@@ -51,4 +51,14 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  
+ private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+  
+  
+  
+  
 end
