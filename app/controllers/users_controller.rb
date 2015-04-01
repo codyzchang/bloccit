@@ -14,6 +14,10 @@ class UsersController < ApplicationController
    private
  
    def user_params
+<<<<<<< HEAD
      params.require(:user).permit(:name, :avatar)
+=======
+     params.require(:user).permit(:name)
+>>>>>>> interlude-assgn
    end
  end
