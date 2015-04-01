@@ -15,7 +15,6 @@ class ApplicationPolicy
   end
 
   def create?
-    false
     user.present?
   end
 
@@ -36,7 +35,7 @@ class ApplicationPolicy
   end
 
   def scope
-    Pundit.policy_scope!(user, record.class)
+    record.class
   end
 
 end
