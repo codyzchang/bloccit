@@ -13,12 +13,12 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
   
-  def markdown_title(markdown)
-    render_as_markdown
+  def markdown_title
+    render_as_markdown(@title)
   end
 
-  def markdown_body(markdown)
-    render_as_markdown
+  def markdown_body
+    render_as_markdown(@post)
   end
 
   def render_as_markdown
