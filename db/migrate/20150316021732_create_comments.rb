@@ -9,5 +9,6 @@ class CreateComments < ActiveRecord::Migration
     end
     
     add_foreign_key :comments, :posts
+    add_foreign_key :comments, :users
   end
 end

@@ -1,4 +1,4 @@
-<%= render(@comments) || "There are no comments available." %>
+<%= "There are no comments available." if comment.nil? %>
 
 <div class="media">
   <%= link_to '#', class: 'pull-left' do %>
