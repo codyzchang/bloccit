@@ -53,11 +53,6 @@ class PostsController < ApplicationController
     end
   end
   
- private
-
-  def post_params
-    params.require(:post).permit(:title, :body)
-  end
   
   def destroy
      @topic = Topic.find(params[:topic_id])
@@ -73,6 +68,14 @@ class PostsController < ApplicationController
        render :show
      end
    end
+  
+ private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+  
+  
   
   
   
