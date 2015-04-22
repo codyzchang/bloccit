@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-describe Vote do 
+describe Vote do
 
-  describe "validations" do
-    describe "value validation" do
-      it "only allows -1 or 1 as values" do
-        v = Vote.new(value: 1)
-        expect(v.valid?).to eq(true)
+  before do
+    let(:upvote) {Vote.new value:1}
+    let(:downvote) {Vote.new value:-1}
+  end
 
-        v2 = Vote.new(value: -1)
-        expect(v2.valid?).to eq(true)
+   describe "value validation" do       
+      it "+1 value" do
+        expect(upvote.valid?).to eq(true)
+      end
 
-        bad_v = Vote.new(value: 2)
-        expect(bad_v.valid?).to eq(false)
+      it "-1 value" do
+        expect(downvote.valid?).to eq(true)          
       end
     end
   end
-end
