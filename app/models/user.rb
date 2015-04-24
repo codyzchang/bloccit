@@ -9,7 +9,9 @@ class User < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
   
-  
+  def favorited(post)
+    favorites.where(post_id: post.id).first
+  end
   
   def admin?
     role == 'admin'
