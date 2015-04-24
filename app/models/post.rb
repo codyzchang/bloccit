@@ -44,6 +44,14 @@ class Post < ActiveRecord::Base
     render_as_markdown(self.body)
   end
 
+  def save_with_initial_vote
+    ActiveRecord::Base.transaction do
+      @post.save
+      @post.create_vote
+    end
+  end
+  
+  
   private
 
   def create_vote
