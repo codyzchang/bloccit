@@ -35,3 +35,6 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'redcarpet'
 gem 'rspec-rails', '~> 3.0'
 
+group :test do
+  gem 'capybara'
+end
