@@ -1,2 +1,0 @@
-class VotePolicy < ApplicationPolicy
-end
