@@ -37,6 +37,15 @@ require 'faker'
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
     )
+<<<<<<< HEAD
+=======
+  
+   # set the created_at to a time within the past year
+   post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+   post.update_rank
+   post.create_vote
+  
+>>>>>>> favorite
 end
 
 posts = Post.all
