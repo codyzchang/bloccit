@@ -34,7 +34,7 @@ gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 gem 'redcarpet'
 gem 'rspec-rails', '~> 3.0'
-
+gem 'newrelic_rpm'
 group :test do
   gem 'capybara'
 end
