@@ -1,4 +1,4 @@
 class Favorite < ActiveRecord::Base
-  has_many :post, dependent: :destroy
-  has_many :user, dependent: :destroy
+  belongs_to :post
+  belongs_to :user
 end
