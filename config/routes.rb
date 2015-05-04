@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Bloccit::Application.routes.draw do
 
   devise_for :users
   resources :users, only: [:update, :show, :index]
