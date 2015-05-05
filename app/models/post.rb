@@ -53,13 +53,14 @@ class Post < ActiveRecord::Base
       @post.create_vote
     end
   end
-  
-  
-  private
 
   def create_vote
     user.votes.create(value: 1, post: self)
   end
+  
+  private
+
+
   
   def render_as_markdown(markdown)
     renderer = Redcarpet::Render::HTML.new
