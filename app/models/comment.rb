@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   belongs_to :user
 
-  has_many :favorites, dependent: :destroy
+
   
   validates :body, length: { minimum: 5 }
   validates :body, presence: true
